@@ -4,55 +4,20 @@
 
 using namespace std;
 
-void gera_seq_alfabeto();
-void gera_somatorio_y();
-void gera_raizes_do_intervalo();
-void gera_pardao_num_asterisco();
-void gera_valores_fx();
-void gera_raizes_r_e_c();
-
-int main(){
-
-    while(true){
-
-        int opcao_menu;
-        cout << "Selecione uma das opcoes abaixo:\n0 - Encerrar programa;\n1 - Letras do alfabeto entre x1 e x2;\n2 - Somatorio y a partir de um valor A e B;\n3 - Raiz quadrada;\n4 - Padrao numerico/asterisco;5 - Valores de f(x) = ax^2 + bx + c entre [Xmin,...,Xmax] com passos P;\n6 - Zeros reais de f(x) = ax^2 + bx + c;\n\nOpcao: ";
-        cin >> opcao_menu;
-
-        switch(opcao_menu){
-
-            case 0:
-                cout << "Programa encerrado!" << endl;
-                return 0;
-            case 1:
-                gera_seq_alfabeto();
-                break;
-            case 2:
-                gera_somatorio_y();
-                break;
-            case 3:
-                gera_raizes_do_intervalo();
-                break;
-            case 4:
-                gera_pardao_num_asterisco();
-                break;
-            case 5:
-                gera_valores_fx();
-                break;
-            case 6:
-                gera_raizes_r_e_c();
-                break;
-
-            default:
-                cout << "\n\n A opção inserida e invalida!" << endl;
-        }
-    }
-
-    return 0;
-}
+class my_class
+    {
+        public:
+            void gera_seq_alfabeto();
+            void gera_somatorio_y();
+            void gera_raizes_do_intervalo();
+            void gera_pardao_num_asterisco();
+            void gera_valores_fx();
+            void gera_raizes_r_e_c();
+    };
 
 
-void gera_seq_alfabeto(){
+void my_class::gera_seq_alfabeto()
+{
 
     char letra1,letra2;
     cout << "\nDigite a primeira letra da sequencia: ";
@@ -83,8 +48,7 @@ void gera_seq_alfabeto(){
     cout << "\n\n";
 }
 
-
-void gera_somatorio_y(){
+void my_class::gera_somatorio_y(){
     
     int a,b;
     cout << "\nDigite o primeiro valor do somatorio: ";
@@ -103,8 +67,7 @@ void gera_somatorio_y(){
     }
 }
 
-
-void gera_raizes_do_intervalo(){
+void my_class::gera_raizes_do_intervalo(){
 
     int a,b;
     cout << "\nDigite o primeiro valor do intervalo: ";
@@ -123,8 +86,7 @@ void gera_raizes_do_intervalo(){
     }
 }
 
-
-void gera_pardao_num_asterisco(){
+void my_class::gera_pardao_num_asterisco(){
 
     int n;
     cout << "\nDigite o valor do n: ";
@@ -147,8 +109,7 @@ void gera_pardao_num_asterisco(){
     }
 }
 
-
-void gera_valores_fx(){
+void my_class::gera_valores_fx(){
 
     int a,b,c,Xmin,Xmax,passo;
     cout << "\nDigite os coeficientes:" << endl;
@@ -179,8 +140,7 @@ void gera_valores_fx(){
     }
 }
 
-
-void gera_raizes_r_e_c(){
+void my_class::gera_raizes_r_e_c(){
 
     int a,b,c,delta=0;
     cout << "\nDigite os coeficientes:" << endl;
