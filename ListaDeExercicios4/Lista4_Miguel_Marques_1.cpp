@@ -15,14 +15,16 @@ int main(){
 
     while(true){
 
+        cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU DE OPCOES <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
+
         int opcao_menu;
-        cout << "Selecione uma das opcoes abaixo:\n0 - Encerrar programa;\n1 - Letras do alfabeto entre x1 e x2;\n2 - Somatorio y a partir de um valor A e B;\n3 - Raiz quadrada;\n4 - Padrao numerico/asterisco;5 - Valores de f(x) = ax^2 + bx + c entre [Xmin,...,Xmax] com passos P;\n6 - Zeros reais de f(x) = ax^2 + bx + c;\n\nOpcao: ";
+        cout << "Selecione uma das opcoes abaixo:\n0 - Encerrar programa;\n1 - Sequencia de Letras do Alfabeto;\n2 - Somatorio y a partir de (x + 3);\n3 - Raiz quadrada dos numeros no intervalo;\n4 - Padrao numerico/asterisco;\n5 - Valores de f(x) no intervalo [Xmin,..., X+Passo,Xmax];\n6 - Zeros reais e imaginarios de f(x);\n\nOpcao: ";
         cin >> opcao_menu;
 
         switch(opcao_menu){
 
             case 0:
-                cout << "Programa encerrado!" << endl;
+                cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PROGRAMA ENCERRADO <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
                 return 0;
             case 1:
                 gera_seq_alfabeto();
@@ -44,7 +46,7 @@ int main(){
                 break;
 
             default:
-                cout << "\n\n A opção inserida e invalida!" << endl;
+                cout << "\n\n A opcao inserida e invalida!" << endl;
         }
     }
 
@@ -64,15 +66,15 @@ void gera_seq_alfabeto(){
         
         cout << "\nSequencia: ";
         if (letra2 > letra1){
-            int j = (int)letra2+1;
+            int j = (int)letra2;
 
-            for(int i=(int)letra1; i < j; i++){
+            for(int i=(int)letra1 + 1; i < j; i++){
                 cout << char(i) << ((i == j-1)? "." : ", ");
             }
         }else{
-            int j = (int)letra1+1;
+            int j = (int)letra1;
 
-            for(int i=(int)letra2; i < j; i++){
+            for(int i=(int)letra2 + 1; i < j; i++){
                 cout << char(i) << ((i == j-1)? "." : ", ");
             }
         }

@@ -15,9 +15,7 @@ class my_class
             void gera_raizes_r_e_c();
     };
 
-
-void my_class::gera_seq_alfabeto()
-{
+void my_class::gera_seq_alfabeto(){
 
     char letra1,letra2;
     cout << "\nDigite a primeira letra da sequencia: ";
@@ -29,15 +27,15 @@ void my_class::gera_seq_alfabeto()
         
         cout << "\nSequencia: ";
         if (letra2 > letra1){
-            int j = (int)letra2+1;
+            int j = (int)letra2;
 
-            for(int i=(int)letra1; i < j; i++){
+            for(int i=(int)letra1 + 1; i < j; i++){
                 cout << char(i) << ((i == j-1)? "." : ", ");
             }
         }else{
-            int j = (int)letra1+1;
+            int j = (int)letra1;
 
-            for(int i=(int)letra2; i < j; i++){
+            for(int i=(int)letra2 + 1; i < j; i++){
                 cout << char(i) << ((i == j-1)? "." : ", ");
             }
         }
@@ -47,6 +45,7 @@ void my_class::gera_seq_alfabeto()
 
     cout << "\n\n";
 }
+
 
 void my_class::gera_somatorio_y(){
     
@@ -67,6 +66,7 @@ void my_class::gera_somatorio_y(){
     }
 }
 
+
 void my_class::gera_raizes_do_intervalo(){
 
     int a,b;
@@ -85,6 +85,7 @@ void my_class::gera_raizes_do_intervalo(){
         cout << "Raiz quadrada de " << a << ": " << sqrt(a) << endl;
     }
 }
+
 
 void my_class::gera_pardao_num_asterisco(){
 
@@ -108,6 +109,7 @@ void my_class::gera_pardao_num_asterisco(){
         cout << "Numero menor igual a zero! Invalido!" << endl;
     }
 }
+
 
 void my_class::gera_valores_fx(){
 
@@ -139,6 +141,7 @@ void my_class::gera_valores_fx(){
         cout << "Numeros iguais! Invalido!" << endl;
     }
 }
+
 
 void my_class::gera_raizes_r_e_c(){
 
