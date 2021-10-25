@@ -1,4 +1,8 @@
 #include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <conio.h> //https://code-reference.com/c/conio.h
+
 #include "opcao1.h"
 #include "opcao3.h"
 #include "opcao5.h"
@@ -14,6 +18,13 @@ inline float gera_potencia(float a, float n)
     if(n >= 1)
         return a*gera_potencia(a,n-1);
     return 1;
+}
+
+inline void gera_num_alea(int num){
+    if (num >= 0){
+        cout << "\nValor do dado: " << rand()%100 << endl;
+        return gera_num_alea((num-1));
+    }
 }
 
 int Max = 0,Min = 1000000;
@@ -200,9 +211,46 @@ int main()
             case 9:
                 break;
             case 10:
+            {
+                cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>> GERADOR DE DADOS ALEATORIOS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
+                cout << "\nDigite q para sair e SPACE para um novo valor do dado." << endl;
+
+                int sair = 1;
+                char tecla;
+                
+                while(sair){
+                    tecla = getch();
+                    
+                    if (int(tecla) == 32){
+                        gera_num_alea(100);
+                    }
+                    if (int(tecla) == 81 || int(tecla) == 113){
+                        cout << "\n\nPrograma Encerrado!" << endl;
+                        sair = 0;
+                    }
+                }
                 break;
+            }
             case 11:
+            {
+                cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>> EMULADOR DE DADO <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
+                cout << "\nDigite q para sair e SPACE para um novo valor do dado." << endl;
+                int sair = 1;
+                char tecla;
+                
+                while(sair){
+                    tecla = getch();
+                    
+                    if (int(tecla) == 32){
+                        cout << "\nValor do dado: " << abs(rand()%10 - 3) << endl;
+                    }
+                    if (int(tecla) == 81 || int(tecla) == 113){
+                        cout << "\n\nPrograma Encerrado!" << endl;
+                        sair = 0;
+                    }
+                }
                 break;
+            }
             case 12:
             {
                 float angulo;
