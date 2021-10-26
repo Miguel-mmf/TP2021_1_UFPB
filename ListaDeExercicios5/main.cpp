@@ -6,6 +6,7 @@
 #include "opcao1.h"
 #include "opcao3.h"
 #include "opcao5.h"
+#include "opcao9.h"
 #include "opcao12.h"
 
 using namespace std;
@@ -25,6 +26,16 @@ inline void gera_num_alea(int num){
         cout << "\nValor do dado: " << rand()%100 << endl;
         return gera_num_alea((num-1));
     }
+}
+
+inline float gera_seq_fibonacci(int posicao, int valor=0, int valor_ant=1){
+
+    if(posicao > 1){
+        valor += valor_ant;
+        valor_ant = valor - valor_ant;
+        return gera_seq_fibonacci(posicao-1,valor,valor_ant);
+    }
+    return valor;
 }
 
 int Max = 0,Min = 1000000;
@@ -128,13 +139,13 @@ int main()
                 while(num != 0){
 
                     cout << "Quadrado do numero " << num << ": " << calc_quadrado(num) << endl;
-                    count++;
 
                     cout << "\nDigite um novo valor inteiro(0 para sair): ";
                     cin >> num;
                 };
+                count++;
 
-                cout << "\nNumero de valores inseridos: " << count << endl;
+                cout << "\nNumero de vezes que a funcao foi chamada: " << count << endl;
                 break;
             }
             case 5:
@@ -207,9 +218,43 @@ int main()
                 break;
             }
             case 8:
+            {
+                int sair = 0, posicao;
+
+                while(!sair){
+
+                    cout << "\nDigite uma posicao da sequencia de fibonacci: ";
+                    cin >> posicao;
+
+                    cout << "\nValor na posicao " << posicao << ": " << gera_seq_fibonacci(posicao);
+
+                    cout << "\nDeseja ver um novo valor da sequencia de Fibonacci (1- sim, 2- nao): ";
+                    cin >> sair;
+                    if(sair == 1){sair = 0;}
+                }
                 break;
+            }
             case 9:
+            {
+                int sair = 0;
+                float base;
+                float altura;
+
+                while(!sair){
+
+                    cout << "\nDigite o valor da base do retangulo: ";
+                    cin >> base;
+                    cout << "\nDigite o valor da altura do retangulo: ";
+                    cin >> altura;
+
+                    calc_perimento(base, altura);
+
+                    cout << "\nDeseja inserir novos valores (1- sim, 2- nao): ";
+                    cin >> sair;
+                    if(sair == 1){sair = 0;}
+                }
                 break;
+            }
             case 10:
             {
                 cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>> GERADOR DE DADOS ALEATORIOS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
