@@ -4,7 +4,7 @@
 #include <conio.h> //https://code-reference.com/c/conio.h
 
 #include "opcao1.h"
-#include "opcao3.h"
+#include "opcao2.h"
 #include "opcao5.h"
 #include "opcao9.h"
 #include "opcao12.h"
@@ -13,7 +13,7 @@ using namespace std;
 
 void gera_menu();
 float calc_quadrado(int);
-void gera_opcao2(int);
+void gera_opcao3(int);
 inline float gera_potencia(float a, float n)
 {
     if(n >= 1)
@@ -23,7 +23,7 @@ inline float gera_potencia(float a, float n)
 
 inline void gera_num_alea(int num){
     if (num >= 0){
-        cout << "\nValor do dado: " << rand()%100 << endl;
+        cout << "Valor do dado: " << rand()%100 << endl;
         return gera_num_alea((num-1));
     }
 }
@@ -38,7 +38,7 @@ inline float gera_seq_fibonacci(int posicao, int valor=0, int valor_ant=1){
     return valor;
 }
 
-int Max = 0,Min = 1000000;
+int Max, Min;
 
 
 int main()
@@ -65,10 +65,10 @@ int main()
 
                 cout << "\nDigite a temperatura em graus Celsius: ";
                 cin >> temp;
-                while(not sair){
+                while(!sair){
                     cout << "\n\nTemperatura em Fahrenheit: " << convert_celsius_to_fahrenheit(temp) << endl;
                     cout << "Temperatura em Kelvin: " << convert_celsius_to_kelvin(temp) << endl;
-                    cout << "\n Deseja inserir uma nova temperatura (1- sim, 2- nao): ";
+                    cout << "\nDeseja inserir uma nova temperatura (1- sim, 2- nao): ";
                     cin >> sair;
                     if(sair == 1){sair = 0;} else{break;};
 
@@ -81,7 +81,7 @@ int main()
             {
                 int num[4], index=0,sair = 0;
 
-                while(not sair){
+                while(!sair){
 
                     cout << "\n\n";
                     while(index <=4){
@@ -89,6 +89,9 @@ int main()
                         cin >> num[index];
                         index++;
                     };
+
+                    Max = num[0];
+                    Min = num[0];
                     
                     cout << "\n\n";
                     for(index = 0; index <= 4; index++){
@@ -108,7 +111,7 @@ int main()
             {
                 int num[4], index=0,sair = 0;
 
-                while(not sair){
+                while(!sair){
 
                     cout << "\n\n";
                     while(index <=4){
@@ -119,7 +122,7 @@ int main()
                     
                     cout << "\n\n";
                     for(index = 0; index <= 4; index++){
-                        gera_opcao2(num[index]);
+                        gera_opcao3(num[index]);
                     }
 
                     cout << "\n Deseja inserir um novo valor (1- sim, 2- nao): ";
@@ -153,7 +156,7 @@ int main()
                 float a, b, c;
                 int sair = 0;
 
-                while(not sair){
+                while(!sair){
 
                     cout << "\nDigite os coeficientes:" << endl;
                     cout << "\nDigite o valor de a: ";
@@ -167,7 +170,7 @@ int main()
 
                     gera_raizes_r_e_c(a,b,c);
 
-                    cout << "\n Deseja inserir uma nova equacao (1- sim, 2- nao): ";
+                    cout << "\nDeseja inserir uma nova equacao (1- sim, 2- nao): ";
                     cin >> sair;
                     if(sair == 1){sair = 0;}
                 };
@@ -178,7 +181,7 @@ int main()
                 float a, b;
                 int sair = 0;
 
-                while(not sair){
+                while(!sair){
 
                     cout << "\nDigite os coeficientes:" << endl;
                     cout << "\nDigite o valor de a: ";
@@ -201,7 +204,7 @@ int main()
                 float a, n;
                 int sair = 0;
 
-                while(not sair){
+                while(!sair){
 
                     cout << "\nDigite os coeficientes:" << endl;
                     cout << "\nDigite o valor de a: ";
@@ -257,7 +260,7 @@ int main()
             }
             case 10:
             {
-                cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>> GERADOR DE DADOS ALEATORIOS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
+                cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>> GERADOR DE NUMEROS ALEATORIOS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
                 cout << "\nDigite q para sair e SPACE para um novo valor do dado." << endl;
 
                 int sair = 1;
@@ -266,6 +269,7 @@ int main()
                 while(sair){
                     tecla = getch();
                     
+                    cout << "\n";
                     if (int(tecla) == 32){
                         gera_num_alea(100);
                     }
@@ -301,7 +305,7 @@ int main()
                 float angulo;
                 int sair = 0;
 
-                while(not sair){
+                while(!sair){
 
                     cout << "\nDigite o valor de um angulo em graus: ";
                     cin >> angulo;

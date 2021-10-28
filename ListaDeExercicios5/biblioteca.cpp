@@ -13,7 +13,7 @@ float calc_fatorial(int num)
     return 1;
 }
 
-void gera_opcao2(int num)
+void gera_opcao3(int num)
 {
     cout << "\nNumero: " << num << endl;
     cout << "Quadrado do numero " << num << ": " << calc_quadrado(num) << endl;
