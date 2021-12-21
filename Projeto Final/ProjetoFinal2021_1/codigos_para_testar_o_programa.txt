@@ -1,0 +1,31 @@
+Códigos para testar o programa
+
+.\programa F ../D140193-2021-03-20.csv N 5
+.\programa F ../D140193-2021-03-20.csv t 20:00:00
+.\programa F ../D140193-2021-03-20.csv ti 00:00:00 tf 02:00:00
+.\programa ti 00:00:00 tf 02:00:00 F ../D140193-2021-03-20.csv
+.\programa F ../D140193-2021-03-20.csv V 14
+.\programa V 14 F ../D140193-2021-03-20.csv
+.\programa F ../D140193-2021-03-20.csv V 14 Vmax
+.\programa F ../D140193-2021-03-20.csv V 14 Vmin
+.\programa F ../D140193-2021-03-20.csv V 14 ti 01:40:00 tf 05:30:00 Vmedia
+.\programa F ../D140193-2021-03-20.csv V 14 ti 01:40:00 tf 05:30:00 Vdesvio
+.\programa F ../D140193-2021-03-20.csv V 14 ti 00:00:00 tf 02:00:00
+.\programa F ../D140193-2021-03-20.csv ti 01:40:00 tf 05:30:00 V1 14 V2 15 Vcorrelacao
+
+
+
+
+
+
+
+.\programa F ../D140193-2021-03-20.csv N 5 t 20:00:00
+.\programa F ../D140193-2021-03-20.csv t 20:00:00 N 5
+.\programa F ../D140193-2021-03-20.csv N 5 t 20:00:00 V 14
+.\programa F ../D140193-2021-03-20.csv N5 ti 00:00:00 tf 02:00:00
+
+.\programa F ../D140193-2021-03-20.csv V 14 Vmedia ti 01:40:00 tf 05:30:00
+.\programa F ../D140193-2021-03-20.csv V 14 Vmedia
+.\programa F ../D140193-2021-03-20.csv V 14 Vdesvio ti 01:40:00 tf 05:30:00
+
+.\programa F ../D140193-2021-03-20.csv V1 14 V2 15 ti 01:40:00 tf 05:30:00 Vcorrelacao
