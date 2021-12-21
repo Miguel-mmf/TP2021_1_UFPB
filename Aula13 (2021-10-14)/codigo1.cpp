@@ -7,7 +7,7 @@ inline void delay(clock_t sec){
     clock_t start_time = clock();
     clock_t end_time = sec*1000 + start_time;
 
-    while(clock() <= end_time);
+    while(clock() <= end_time); //{cout << sec*1000 << endl;};
 }
 
 int main(){
