@@ -1,0 +1,7 @@
+ID   Nome                          Nota 1  Nota 2  Nota 3  
+1    Miguel Marques Ferreira       10      0       10      
+2    Miguel                        10      9       10      
+3    Milena                        8       7       4       
+4    Stefanie                      6       5       9       
+5    Pedro                         8       6       7       
+6    Joaquim                       10      6       7       
